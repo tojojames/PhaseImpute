@@ -13,6 +13,12 @@ export 1000Genome=$PATH:/path/to/1000Genome
 
 ```
 
+Strand information for different chips can be found here
+
+```
+http://www.well.ox.ac.uk/~wrayner/strand/index.html#Illumina
+```
+
 ### This is an example on a selected region of Chromosome 1
 
 #### Step 1: Convert to plink map and ped format from bed bim format
@@ -38,8 +44,6 @@ gtool -P --ped MSchip_RNAseq_recode_chr1.ped --map MSchip_RNAseq_recode_chr1.map
 ```
 impute2 -prephase_g -m $1000Genome/genetic_map_chr1_combined_b37.txt -g MSchip_RNAseq_recode_chr1.gen -int 652566 249218992  -Ne 81 -o MSchip_RNAseq_chr1.prephasing.impute2 -allow_large_regions
 ```
-
-*250000 bps on both sides of the gene level….since I am focusing on the exome/RNAseq regions*
 
 
 #### Step 5: Imputation into pre-phased haplotypes
