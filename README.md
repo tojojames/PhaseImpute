@@ -27,7 +27,7 @@ plink --bfile MSchip_RNAseq --recode --tab --out MSchip_RNAseq
 plink --bfile MSchip_RNAseq --recode --out MSchip_RNAseq_recode_chr1 --chr 1
 ```
 
-#### Step 3: Convert to gen file 
+#### Step 3: Convert to GEN file (genotype file) 
 
 ```
 gtool -P --ped MSchip_RNAseq_recode_chr1.ped --map MSchip_RNAseq_recode_chr1.map --og MSchip_RNAseq_recode_chr1.gen
