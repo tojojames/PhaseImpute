@@ -13,7 +13,7 @@ export 1000Genome=$PATH:/path/to/1000Genome
 
 ```
 
-Strand information for different chips can be found here
+Strand information for different chips (eg.Illumina) can be found here
 
 ```
 http://www.well.ox.ac.uk/~wrayner/strand/index.html#Illumina
