@@ -9,7 +9,7 @@ wget https://mathgen.stats.ox.ac.uk/impute/1000GP_Phase3_chrX.tgz
 
 tar -xvzf *.tgz
 
-export thousandGenome=$PATH:/path/to/1000GP_Phase3
+export thousandGenome=$PATH:/path/to/1000GP_Phase3/
 
 ```
 
@@ -46,7 +46,7 @@ impute2 -prephase_g -m $thousandGenome/genetic_map_chr1_combined_b37.txt -g MSch
 *Most cases this error doesnt occur,so ignore this correction with grep!*
 
 
-Strand information for different chips* (eg.Illumina) can be found here,
+##### Strand information for different chips (eg.Illumina) can be found here,
 ```
 http://www.well.ox.ac.uk/~wrayner/strand/index.html#Illumina
 ```
