@@ -44,7 +44,12 @@ gtool -P --ped MSchip_RNAseq_recode_chr1.ped --map MSchip_RNAseq_recode_chr1.map
 ```
 impute2 -prephase_g -m $1000Genome/genetic_map_chr1_combined_b37.txt -g MSchip_RNAseq_recode_chr1.gen -int -int 1 10000000  -Ne 178 -o MSchip_RNAseq_chr1.prephasing.impute2 -allow_large_regions
 ```
+###### grep -v '0.333' MSchip_RNAseq_chr1.prephasing.impute2_haps > MSchip_RNAseq_chr1.prephasing.impute2_haps_corrected
 
+*if SNPs not determined by prephasing, it confuses imputation (next) step and result in following error in step 5*
+*"ERROR: Individual 47 (1-indexed) has invalid alleles '00.333' at position 215314870"*
+
+*Most cases this error doesnt occur,so ignore this correction with grep!*
 
 #### Step 5: Imputation into pre-phased haplotypes
 
