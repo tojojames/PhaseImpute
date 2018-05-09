@@ -56,7 +56,7 @@ http://www.well.ox.ac.uk/~wrayner/strand/index.html#Illumina
 ```
 impute2 -use_prephased_g -m $thousandGenome/genetic_map_chr1_combined_b37.txt -h $thousandGenome/1000GP_Phase3_chr1.hap.gz -l $thousandGenome/1000GP_Phase3_chr1.legend.gz  -known_haps_g MSchip_RNAseq_chr1.prephasing.impute2_haps  -int 1 10000000 -Ne 178  -o MSchip_RNAseq_chr1.phased.chunk1.impute2 -phase -allow_large_regions -strand_g MSchip.strand
 ```
-The following script can concatenate all the pieces of a single chromosome(for example chromosome). This can reduce the memory usage,
+The following script can concatenate all the pieces(eg. 24 pieces) of a single chromosome(for example chromosome). This can reduce the memory usage,
 ###### cat MSchip_RNAseq_chr1.phased.chunk{1..24}.impute2 >MSchip_RNAseq_chr1.phased.ALLchunk.merged.impute2
 For all the chromosomes,
 ###### cat MSchip_RNAseq_chr{1..22}.phased.ALLchunk.merged.impute2 >MSchip_RNAseq_chr1_22.phased.ALLchunk.merged.impute2
