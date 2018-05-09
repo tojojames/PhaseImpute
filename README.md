@@ -56,6 +56,6 @@ impute2 -use_prephased_g -m $thousandGenome/genetic_map_chr1_combined_b37.txt -h
 ```
 The following script can concatenate all the pieces(eg. 24 pieces) of a single chromosome(for example chromosome). This can reduce the memory usage,
 ###### cat MSchip_RNAseq_chr1.phased.chunk{1..24}.impute2 >MSchip_RNAseq_chr1.phased.ALLchunk.merged.impute2
-For all the chromosomes,
+#### For concatenating all the chromosomes
 ###### cat MSchip_RNAseq_chr{1..22}.phased.ALLchunk.merged.impute2 >MSchip_RNAseq_chr1_22.phased.ALLchunk.merged.impute2
 
