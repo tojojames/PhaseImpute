@@ -64,7 +64,8 @@ The following script can concatenate all the pieces(eg. 24 pieces) of a single c
 
 #### Step 6: Converting haps into VCF format
 ```
-shapeit -convert --input-haps MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps --output-vcf MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf --thread 8
+shapeit -convert --input-haps MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps --output-vcf MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz --thread 8
+tabix -f -p vcf MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz
 ```
 *It requires a sample file for example, "MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.sample"*
 
