@@ -81,14 +81,14 @@ vcf-subset -c N000271 MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz|b
 tabix -f -p vcf N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz
 ```
 
-#### Step 7: ASE test using phASER tool
+#### Step 8: ASE test using phASER tool
 
 Reference to Phaser and package https://github.com/secastel/phaser/tree/master/phaser
 
 ```
 python /phaser/phaser.py --vcf N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz --bam  N000271_Aligned_sorted_sort.bam --paired_end 1 --mapq 255 --baseq 10 --sample N000271 --blacklist hg19_hla.chr.bed --haplo_count_blacklist hg19_haplo_count_blacklist.chr.bed --threads 4 --o N000271_MSrepASE
 ```
-#### Step 8: Haplotype expression quantifications using phASER Gene AE tool
+#### Step 9: Haplotype expression quantifications using phASER Gene AE tool
 ```
 python /phaser_gene_ae/phaser_gene_ae.py --haplotypic_counts N000271_MSrepASE.haplotypic_counts.txt --features hg19_ensembl.chr.bed --o N000271_Phaser_gene_ae.txt
 ```
