@@ -85,10 +85,18 @@ tabix -f -p vcf N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz
 
 Reference to Phaser and package https://github.com/secastel/phaser/tree/master/phaser
 
+Download ('chr' label corrected version for hla bed file in the repository)
+wget ftp://ftp.nygenome.org/sec/phaser/annot_files_v100/hg19_hla.bed.gz
+wget ftp://ftp.nygenome.org/sec/phaser/annot_files_v100/hg19_haplo_count_blacklist.bed.gz
+
 ```
 python /phaser/phaser.py --vcf N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz --bam  N000271_Aligned_sorted_sort.bam --paired_end 1 --mapq 255 --baseq 10 --sample N000271 --blacklist hg19_hla.chr.bed --haplo_count_blacklist hg19_haplo_count_blacklist.chr.bed --threads 4 --o N000271_MSrepASE
 ```
 #### Step 9: Haplotype expression quantifications using phASER Gene AE tool
+
+Download ('chr' label corrected version in the repository)
+wget ftp://ftp.nygenome.org/sec/phaser/hg19_ensembl.bed.gz
+
 ```
 python /phaser_gene_ae/phaser_gene_ae.py --haplotypic_counts N000271_MSrepASE.haplotypic_counts.txt --features hg19_ensembl.chr.bed --o N000271_Phaser_gene_ae.txt
 ```
