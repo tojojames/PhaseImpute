@@ -1,4 +1,4 @@
-## Phase and Impute using 1000 Genome and Impute2
+## Phase and Impute using 1000 Genome and Impute2 (BETA version)
 
 
 Download,
@@ -14,6 +14,8 @@ export thousandGenome=$PATH:/path/to/1000GP_Phase3/
 ```
 
 ### This is an example on a selected region of Chromosome 1
+
+*For simplicity,I am only adding one chromosome.Users are expected to scale to all chromosome.* 
 
 #### Step 1: Convert to plink map and ped format from bed bim format
 
@@ -70,3 +72,10 @@ tabix -f -p vcf MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz
 *It requires a sample file for example, "MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.sample"*
 
 Sample format can be found here http://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#hapsample
+
+#### Step 7: Subseting vcf file based on Sample (for Phaser ASE algorithm)
+*for example, sample "N000271" on chromosome 1*
+```
+vcf-subset -c N000271 MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz|bgzip -c >N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz
+```
+
