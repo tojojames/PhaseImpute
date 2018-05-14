@@ -92,7 +92,7 @@ python /phaser/phaser.py --vcf N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impu
 ```
 python /phaser_gene_ae/phaser_gene_ae.py --haplotypic_counts N000271_MSrepASE.haplotypic_counts.txt --features hg19_ensembl.chr.bed --o N000271_Phaser_gene_ae.txt
 ```
-R script "imbalance_FDR.R" file can be downloaded from this Repository.This test uses a binomial test to determine if genes have significant allelic imbalance (deviation from 50/50 expression).
+R script "imbalance_FDR.R" file can be downloaded from this Repository. This test uses a binomial test to determine if genes have significant allelic imbalance (deviation from 50/50 expression).
 ```
 Rscript --verbose imbalance_FDR.R N000271_Phaser_gene_ae.txt N000271_Phaser_gene_ae_FDR.txt 
 ```
