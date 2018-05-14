@@ -10,7 +10,7 @@ cov8 = subset(phaser_test_case_gene_ae, phaser_test_case_gene_ae$totalCount >= 8
 # perform a binomial test for deviation from 0.5
 cov8$binom_p = apply(cov8[,c("aCount","bCount")], 1, function(x) binom.test(x[1],x[1]+x[2],p=0.5)$p.value)
 # perform multiple testing correction with FDR
-cov8$binom_q = p.adjust(cov8$binom_p, method = "fdr")
+cov8$binom_padj = p.adjust(cov8$binom_p, method = "fdr")
 # plot haplotype A versus haplotype, highlight sites with significant imbalance (FDR < 5%)
 #plot(cov8$bCount, cov8$aCount, log="xy", col=(cov8$binom_q<0.05)+1, ylab="Haplotype B Count", xlab="Haplotype A Count")
 #abline(0,1,col="grey")
