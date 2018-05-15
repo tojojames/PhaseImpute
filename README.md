@@ -89,6 +89,8 @@ Reference to Phaser and package https://github.com/secastel/phaser/tree/master/p
 ###### wget ftp://ftp.nygenome.org/sec/phaser/annot_files_v100/hg19_hla.bed.gz
 ###### wget ftp://ftp.nygenome.org/sec/phaser/annot_files_v100/hg19_haplo_count_blacklist.bed.gz
 
+###### samtools index N000271_Aligned_sorted_sort.bam 
+
 ```
 python /phaser/phaser.py --vcf N000271_MSchip_RNAseq_chr1.phased.ALL_chunks.impute2_haps.vcf.gz --bam  N000271_Aligned_sorted_sort.bam --paired_end 1 --mapq 255 --baseq 10 --sample N000271 --blacklist hg19_hla.chr.bed --haplo_count_blacklist hg19_haplo_count_blacklist.chr.bed --threads 4 --o N000271_MSrepASE
 ```
