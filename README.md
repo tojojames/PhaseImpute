@@ -106,3 +106,5 @@ R script "imbalance_FDR.R" file can be downloaded from this Repository. This tes
 ```
 Rscript --verbose imbalance_FDR.R N000271_Phaser_gene_ae.txt N000271_Phaser_gene_ae_FDR.txt 
 ```
+
+###### cat *_Phaser_gene_ae_FDR.txt >Phaser_result_allsamples.txt
