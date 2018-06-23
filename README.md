@@ -15,7 +15,7 @@ export thousandGenome=$PATH:/path/to/1000GP_Phase3/
 
 ### This is an example on a selected region of Chromosome 1
 
-*For simplicity,I am only adding one chromosome.Users are expected to scale to all chromosome.* 
+*For simplicity and demo, testing only on one chromosome.* 
 
 #### Step 1: Convert to plink map and ped format from bed bim format
 
