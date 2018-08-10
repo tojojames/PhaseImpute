@@ -61,7 +61,7 @@ impute2 -use_prephased_g -m $thousandGenome/genetic_map_chr1_combined_b37.txt -h
 [[Note in case of the following error(seldom get into this error)
 
 *"ERROR: Individual 47 (1-indexed) has invalid alleles '00.333' at position 215314870"*
-if SNPs not determined by prephasing, it confuses this step of imputation  and result in following error in the above error.One way to fix using the following grep to remove the confused phases]
+if SNPs not determined by prephasing, it confuses this step of imputation  and result in following error in the above error. One way to fix using the following grep to remove the confused phases and continue to previous step of prephasing (step 4)] 
 ###### grep -v '0.333' MSchip_RNAseq_chr1.prephasing.impute2_haps > MSchip_RNAseq_chr1.prephasing.impute2_haps_corrected]]
 
 The following script can concatenate all the pieces(eg. 24 pieces) of a single chromosome(for example chromosome). This can reduce the memory usage,
