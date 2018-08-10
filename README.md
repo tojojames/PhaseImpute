@@ -1,4 +1,4 @@
-### Allele specific expression study with Phaser
+### Allele specific expression study with phASER
 
 #### Steps to phase and impute using 1000 Genome and Impute2 to study allelic imbalance  (BETA version)
 
