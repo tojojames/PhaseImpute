@@ -1,4 +1,6 @@
-## Phase and Impute using 1000 Genome and Impute2 (BETA version)
+### Allele specific expression study with Phaser
+
+#### Steps to phase and impute using 1000 Genome and Impute2 to study allelic imbalance  (BETA version)
 
 
 Download,
