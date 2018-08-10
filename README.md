@@ -43,13 +43,7 @@ gtool -P --ped MSchip_RNAseq_recode_chr1.ped --map MSchip_RNAseq_recode_chr1.map
 impute2 -prephase_g -m $thousandGenome/genetic_map_chr1_combined_b37.txt -g MSchip_RNAseq_recode_chr1.gen -int 1 249250621  -Ne 20000 -o MSchip_RNAseq_chr1.prephasing.impute2 -allow_large_regions
 ```
 
-*Repository file "hg19_chrLen" for chromosome size*
-
-*if SNPs not determined by prephasing, it confuses imputation (next) step and result in following error in step 5*
-*"ERROR: Individual 47 (1-indexed) has invalid alleles '00.333' at position 215314870"*
-###### grep -v '0.333' MSchip_RNAseq_chr1.prephasing.impute2_haps > MSchip_RNAseq_chr1.prephasing.impute2_haps_corrected
-*Most cases this error doesnt occur,so ignore this correction with grep!*
-
+*File "hg19_chrLen" for chromosome size can be found in this repository*
 
 ##### Strand information for different chips (eg.Illumina) can be found here,
 ```
@@ -61,6 +55,19 @@ http://www.well.ox.ac.uk/~wrayner/strand/index.html#Illumina
 ```
 impute2 -use_prephased_g -m $thousandGenome/genetic_map_chr1_combined_b37.txt -h $thousandGenome/1000GP_Phase3_chr1.hap.gz -l $thousandGenome/1000GP_Phase3_chr1.legend.gz  -known_haps_g MSchip_RNAseq_chr1.prephasing.impute2_haps  -int 1 10000000 -Ne 20000  -o MSchip_RNAseq_chr1.phased.chunk1.impute2 -phase -allow_large_regions -strand_g MSchip.strand
 ```
+
+
+
+*Note in case of the following error(seldom get into this error)
+*"ERROR: Individual 47 (1-indexed) has invalid alleles '00.333' at position 215314870"*
+*if SNPs not determined by prephasing, it confuses this step of imputation  and result in following error in the above error.One way to fix using the following grep to remove the confused phases*
+###### grep -v '0.333' MSchip_RNAseq_chr1.prephasing.impute2_haps > MSchip_RNAseq_chr1.prephasing.impute2_haps_corrected
+
+
+
+
+
+
 The following script can concatenate all the pieces(eg. 24 pieces) of a single chromosome(for example chromosome). This can reduce the memory usage,
 ###### cat MSchip_RNAseq_chr1.phased.chunk{1..24}.impute2 |sort -k3n |sed 's/---/chr1/g' >MSchip_RNAseq_chr1.phased.ALLchunk.merged.impute2
 
